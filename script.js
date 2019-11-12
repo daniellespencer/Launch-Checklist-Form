@@ -27,6 +27,7 @@ window.addEventListener("load", function(){
          document.getElementById('fuelStatus').innerHTML = "Fuel level too low for launch";
          document.getElementById('launchStatus').innerHTML = "Shuttle not ready for launch";
          document.getElementById('launchStatus').style.color = "red";
+         event.preventDefault();
        };
        
        if (cargoMassInput.value > 10000){
@@ -37,6 +38,7 @@ window.addEventListener("load", function(){
          document.getElementById('cargoStatus').innerHTML = "Cargo mass too high for launch";
          document.getElementById('launchStatus').innerHTML = "Shuttle not ready for launch";
          document.getElementById('launchStatus').style.color = "red";
+         event.preventDefault();
        };
        
        if (fuelLevelInput.value > 10000 && cargoMassInput.value < 10000){
@@ -46,6 +48,7 @@ window.addEventListener("load", function(){
          document.getElementById('copilotStatus').innerHTML = `Pilot ${copilotNameInput.value} is ready for launch`;
          document.getElementById('launchStatus').innerHTML = "Shuttle is ready for launch";
          document.getElementById('launchStatus').style.color = "green";
+         event.preventDefault();
        };     
        event.preventDefault();    
    });     
@@ -53,16 +56,20 @@ window.addEventListener("load", function(){
 fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response){
    response.json().then(function(json){
       const missionTarget = document.getElementById("missionTarget");
+
+      let randoNumber = Math.floor(Math.random()*json.length)
+      console.log(randoNumber);
+
       missionTarget.innerHTML = `
       <h2>Mission Destination</h2>
          <ol>
-            <li>Name: ${json[0].name}</li>
-            <li>Diameter: ${json[0].diameter}</li>
-            <li>Star: ${json[0].star}</li>
-            <li>Distance from Earth: ${json[0].distance}</li>
-            <li>Number of Moons: ${json[0].moons}</li>
+            <li>Name: ${json[randoNumber].name}</li>
+            <li>Diameter: ${json[randoNumber].diameter}</li>
+            <li>Star: ${json[randoNumber].star}</li>
+            <li>Distance from Earth: ${json[randoNumber].distance}</li>
+            <li>Number of Moons: ${json[randoNumber].moons}</li>
          </ol>
-         <img src="${json[0].image}">
+         <img src="${json[randoNumber].image}">
       `;
    });
 });
