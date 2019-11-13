@@ -24,7 +24,7 @@ window.addEventListener("load", function(){
             let visibilityTime = document.getElementById('faultyItems');
             visibilityTime.style.visibility = 'visible'; 
             document.getElementById('pilotStatus').innerHTML = `Pilot ${pilotNameInput.value} is ready for launch`;       
-            document.getElementById('copilotStatus').innerHTML = `Pilot ${copilotNameInput.value} is ready for launch`;       
+            document.getElementById('copilotStatus').innerHTML = `Co-pilot ${copilotNameInput.value} is ready for launch`;       
             document.getElementById('fuelStatus').innerHTML = "Fuel level too low for launch";
             document.getElementById('launchStatus').innerHTML = "Shuttle not ready for launch";
             document.getElementById('launchStatus').style.color = "red";
@@ -33,7 +33,7 @@ window.addEventListener("load", function(){
             let visibilityTime = document.getElementById('faultyItems');
             visibilityTime.style.visibility = 'visible'; 
             document.getElementById('pilotStatus').innerHTML = `Pilot ${pilotNameInput.value} is ready for launch`;       
-            document.getElementById('copilotStatus').innerHTML = `Pilot ${copilotNameInput.value} is ready for launch`;  
+            document.getElementById('copilotStatus').innerHTML = `Co-pilot ${copilotNameInput.value} is ready for launch`;  
             document.getElementById('cargoStatus').innerHTML = "Cargo mass too high for launch";
             document.getElementById('launchStatus').innerHTML = "Shuttle not ready for launch";
             document.getElementById('launchStatus').style.color = "red";
@@ -42,7 +42,7 @@ window.addEventListener("load", function(){
             let visibilityTime = document.getElementById('faultyItems');
             visibilityTime.style.visibility = 'visible'; 
             document.getElementById('pilotStatus').innerHTML = `Pilot ${pilotNameInput.value} is ready for launch`;       
-            document.getElementById('copilotStatus').innerHTML = `Pilot ${copilotNameInput.value} is ready for launch`;
+            document.getElementById('copilotStatus').innerHTML = `Co-pilot ${copilotNameInput.value} is ready for launch`;
             document.getElementById('launchStatus').innerHTML = "Shuttle is ready for launch";
             document.getElementById('launchStatus').style.color = "green";
         };         
